@@ -84,13 +84,13 @@ layout: default
 
     <h1> 2018-09-17 Update </h1>
     <p> Implemented character movement and attempt at creating a field of view. The character movement was originally considered simple by just simply detecting if a key is pressed and them increment the object position in the correct direction. However, this does not allow for diagonal movement and the movements themselves did not feel right. I switched to using a boolean value that is set to true on keypress and then set to false on keyrelease. The draw function will check for these boolean values and can increment in both X and Y so simulate diagonal movement. </p>
-    <img src='/movementControl.jpg'>
+    <img src='/movementControl.png'>
 
     <p> Drawing the field of view is proving to be extremely difficult. It's simple to create a line that follows from the mouse to the character but I need a line with a specified distance. In order to do so, I need to calculate the angle between the character and the mouse location. The coordinate plane is different so it's hard to make sense of what the angles means. </p>
-    <img src='/angleCalculations.jpg'>
+    <img src='/angleCalculations.png'>
 
     <p> I used a few different types of angle calculations which all seem to give me different outputs. After I am able to create a line of defined length and follows the direction of the mouse, it should be possible to expand it and make it look like a "field of view" or an arc. For now, it feels like a math problem but the coordinates are in the wrong spots.</p>
-    <img src='/foxLines.jpg'>
+    <img src='/foxLines.png'>
 
   </body>
 </html>
