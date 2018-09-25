@@ -80,34 +80,34 @@ layout: default
     <p> This is definitely a lot of elements to incorporate and I'm positve I will not be able to do everything I have imagined. To start, I need to learn animation or transitions of objects on the screen. Then I need to design a level with enough complexity to incorporate the different elements. I forsee this being pretty technical and "mathy" when it comes to calculating the field of view on every frame and adjusting the drawn world to grey/black out everything not within the field of view. Afterwards will come interactions with other objects such as enemies and walls. Next comes the use of weapons which will follow a similar logic as to how enemies/walls interacts with the player. Finally, I need to think of giving the enemies autonamy to a certain extent that allows them to move around out of the field of view and each have their own field of view. This is definitely an extremely ambitious projects to accomplish in a 2(???) Weeks.
 
     <h1> Mockup </h1>
-    <img src='/GameMockUp.jpg'>
+    <img src='/img/GameMockUp.jpg'>
 
     <h1> 2018-09-17 Update </h1>
     <p> Implemented character movement and attempt at creating a field of view. The character movement was originally considered simple by just simply detecting if a key is pressed and them increment the object position in the correct direction. However, this does not allow for diagonal movement and the movements themselves did not feel right. I switched to using a boolean value that is set to true on keypress and then set to false on keyrelease. The draw function will check for these boolean values and can increment in both X and Y so simulate diagonal movement. </p>
-    <img src='/movementControl.png'>
+    <img src='/img/movementControl.png'>
 
     <p> Drawing the field of view is proving to be extremely difficult. It's simple to create a line that follows from the mouse to the character but I need a line with a specified distance. In order to do so, I need to calculate the angle between the character and the mouse location. The coordinate plane is different so it's hard to make sense of what the angles means. </p>
-    <img src='/angleCalculations.png'>
+    <img src='/img/angleCalculations.png'>
 
     <p> I used a few different types of angle calculations which all seem to give me different outputs. After I am able to create a line of defined length and follows the direction of the mouse, it should be possible to expand it and make it look like a "field of view" or an arc. For now, it feels like a math problem but the coordinates are in the wrong spots.</p>
-    <img src='/fovLines.png'>
+    <img src='/img/fovLines.png'>
 
     <h1> 2018-09-24 Final Update </h1>
     <p> I did not know where this project was going to go because the scope of the originally game was just too much to accomplish in a short about of time. I knew I wanted to keep the core elements of having a field of view and maze like structure. So to make these elements more complex, I decided that I would not be hardcoding a maze but instead, implement an algorithm to create a maze. I chose to use the Recursive Backtracker algorithm I found on <a href="https://en.wikipedia.org/wiki/Maze_generation_algorithm">Wikipedia</a></p>
     
     <p> For the algorithm, I had to create a class for each space on the maze. Each tile will start off with 4 walls and have a couple more attributes that helps the algorithm determine if the tile should be modified or not </p>
-    <img src='/tileClass.png'>
+    <img src='/img/tileClass.png'>
 
     <p> Then, I needed to implement the logic for removing the walls on each tile. If this tile has a right wall removed, the tile to the right should have the left wall removed. Here's a snippet of the logic: </p>
-    <img src='/removeWallLogic.png'>
+    <img src='/img/removeWallLogic.png'>
 
     <p> Implementing this algorithm was time consuming because I am unfamiliar with Java's data structures like an Array or an ArrayList. However, slowly working through the steps of the algorithm described allowed me to have a working maze generator </p>
 
     <p> The next step was to implement the field of view so that only a certain area in front of the character could be seen. I went through many different ways of trying to do this, the main ones being masking and PImage. PImage showed promise because it would allow me to draw the field of view on a different layer above the maze. However, I was unable to find a way to fill around the drawn field of view. I finally stumbled upon creating custom shapes and a specific case where I could create a hole in the shape. This was done using shapes and contours. </p>
-    <img src='/showPartial.png'>
+    <img src='/img/showPartial.png'>
 
     <p> This is a much more simplified description of all the logic, time, and planning that went into creating this game. I was not expecting it to be quite this troublesome but I did learn a lot in the end. Here's a screenshot of the game: </p>
-    <img src='/gameScreenshot.png'>
+    <img src='/img/gameScreenshot.png'>
 
   </body>
 </html>
