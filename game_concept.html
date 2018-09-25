@@ -92,5 +92,22 @@ layout: default
     <p> I used a few different types of angle calculations which all seem to give me different outputs. After I am able to create a line of defined length and follows the direction of the mouse, it should be possible to expand it and make it look like a "field of view" or an arc. For now, it feels like a math problem but the coordinates are in the wrong spots.</p>
     <img src='/fovLines.png'>
 
+    <h1> 2018-09-24 Final Update </h1>
+    <p> I did not know where this project was going to go because the scope of the originally game was just too much to accomplish in a short about of time. I knew I wanted to keep the core elements of having a field of view and maze like structure. So to make these elements more complex, I decided that I would not be hardcoding a maze but instead, implement an algorithm to create a maze. I chose to use the Recursive Backtracker algorithm I found on <a href="https://en.wikipedia.org/wiki/Maze_generation_algorithm">Wikipedia</a></p>
+    
+    <p> For the algorithm, I had to create a class for each space on the maze. Each tile will start off with 4 walls and have a couple more attributes that helps the algorithm determine if the tile should be modified or not </p>
+    <img src='/tileClass.png'>
+
+    <p> Then, I needed to implement the logic for removing the walls on each tile. If this tile has a right wall removed, the tile to the right should have the left wall removed. Here's a snippet of the logic: </p>
+    <img src='/removeWallLogic.png'>
+
+    <p> Implementing this algorithm was time consuming because I am unfamiliar with Java's data structures like an Array or an ArrayList. However, slowly working through the steps of the algorithm described allowed me to have a working maze generator </p>
+
+    <p> The next step was to implement the field of view so that only a certain area in front of the character could be seen. I went through many different ways of trying to do this, the main ones being masking and PImage. PImage showed promise because it would allow me to draw the field of view on a different layer above the maze. However, I was unable to find a way to fill around the drawn field of view. I finally stumbled upon creating custom shapes and a specific case where I could create a hole in the shape. This was done using shapes and contours. </p>
+    <img src='/showPartial.png'>
+
+    <p> This is a much more simplified description of all the logic, time, and planning that went into creating this game. I was not expecting it to be quite this troublesome but I did learn a lot in the end. Here's a screenshot of the game: </p>
+    <img src='/gameScreenshot.png'>
+
   </body>
 </html>
