@@ -6,10 +6,23 @@ layout: default
   <header>
     <h1>David Chan | Midterm</h1>
   </header>
-  <body>
+  <body>  
+    <h1> Inspiration </h1>
+    <img src='/img/midtermInspiration.png'>
+    <p> My main inspiration came from the game, "Every day the same dream". It is a scene by scene based game where you control the character to move left and right. It had very smooth animations and a plot that didn't require much text to explain.
+
     <h1>Midterm Concept</h1>
-    <p>I want to make a narrative about the life of a college student. In our daily lives, we make a lot of choices which means I have alot of user interactions to work with. The game will consists of multiple scenes, starting with some character in bed choosing to snooze the alarm or not. It will most definitely be 2d pixel art from a side angle where things only move left and right. Perhaps there may be a scene where the character boards a train or a bike and it can be a top down view. I may add in user interactivity with a keyboard by allowing the user to move the characters. However, to decrease the complexity in dealing with all the possible routes the user can take during a play through, whenever a user needs to choose an option, it will lead to the same place. Just, one of the option will display an extra cutscene but then return to the main story line.</p>
     <img src='/img/midtermConcept.jpg'>
-    <!-- <h1> <a href='https://github.com/dchan99/Creative-Coding/tree/master/'> Click here for the P5 Code! </a> </h1> -->
+    <p>I want to make a narrative about the life of a college student. In our daily lives, we make a lot of choices which means I have alot of user interactions to work with. The game will consists of multiple scenes, starting with some character in bed choosing to snooze the alarm or not. It will most definitely be 2d pixel art from a side angle where things only move left and right. Perhaps there may be a scene where the character boards a train or a bike and it can be a top down view. I may add in user interactivity with a keyboard by allowing the user to move the characters. However, to decrease the complexity in dealing with all the possible routes the user can take during a play through, whenever a user needs to choose an option, it will lead to the same place. Just, one of the option will display an extra cutscene but then return to the main story line.</p>
+
+    <h1> Progress </h1>
+    <img src='/img/midtermProgress.png'>
+    <p> Here, I made the functions to draw the buttons that will control which scene the user is able to see. These buttons are native HTML buttons because it is easier to work with them to do something when they are clicked on. </p>
+
+    <h1> Final Results </h1>
+    <img src='/img/midtermFinal.png'>
+
+    <h1> Reflection </h1>
+    <p> This project was very different from what I had originally expected. Originally, I had planned on drawing everything using P5 shapes but I realized on the first day that it would take much too long. So I opted to draw my scenes to resemble pixel art by using pixelart.com. I thought it would be much simpler and would not take as long but pixel art was not as easy to draw as I had anticipated. The more I thought about my narrative, the more scenes I had to draw. I ended up with 14 scenes. Once again, I thought the hard part was over because drawing the scenes was very time consuming. The p5 coding part was complicated because I needed to create a seperate function for each scene. I did a simple state machine to switch each scene but at each scene, things needed to be reset like the buttons and x,y coordinates. This caused an issue when trying to animate the images to fade in and fade out. The variables used to keep track of the alpha value needed to fluctuate up and down so it would always need to be reset. I was unable to reset the variables within each function because the draw function loops and the variables would be constantly reset. My solution was to reset the required variables within the previous scene function. The final problem was working with the dom element button. Because the draw loops forever, the buttons would be constantly created but it would not be obvious because they're just stacking on top of each other. So I needed to make sure only one button is drawn and removed during each scene. 
   </body>
 </html>
