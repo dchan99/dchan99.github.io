@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<!DOCTYPE html>
+<html>
+  <header>
+    <h1>David Chan | Sound Sequencer</h1>
+  </header>
+  <body>
+    <h1>Sound Sequencer with Circles</h1>
+    <p>For this assignment, I wanted animating shapes that would interact with each other and the interactions would produce some sounds. My main source of inspiration was thinking about the way waves reacted to one another. Light and sound waves spread in all directions and bounce back. Water behaves in a similar way where when you drop something into calm water, it would produce ripples around the point of impact.</p>
+    <img src='/img/waterRipples.jpg'>
+    <p>To make the sequencer feel like the user is creating a droplet of water, I added a sound taken from freesound of a water droplet. Everytime the user clicks, a new droplet is generated. After the initial drop, the circles will appear to expand like a wave. The way it expands, it sort of reminded me of vibrations and reverb that's often used in music. Finally, when 2 circles interact with each other, it created a new droplet at the intersection point. This was very math-y and I had to reference a math paper as well as C++ code that found the intersection points between two circles. The new droplet would also be of a different sound because it was created by two waves instead of being dropped onto the canvas by the user.</p>
+    <img src='/img/soundSequencerFinal.png'>
+    <p> To somewhat create a rhythm, droplets are generated automatically at random positions twice a second. The loudness of the initial drop is also in correlation to how big the droplet can expand.</p>
+    <h1> <a href='https://github.com/dchan99/Creative-Coding/tree/master/Sound%20Sequencer'> Click here for the P5 Code! </a> </h1>
+  </body>
+</html>
