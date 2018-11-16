@@ -16,5 +16,10 @@ layout: default
 
     <h1> Random Cat/Dog Images API </h1>
     <p> Another idea I had was to use one of the many random cat/dog/animal api and visualize the color composition of the photo. In a 500,500 canvas, there will be 250000 pixels to go through which is plenty of data. </p>
+
+
+    <h1> Completion </h1>
+    <p> The idea I decided to go with was plotting the all jobs that have to do with Python on a map of the United States. This assignment was way harder than I had originally anticipated because I had to work with multiple apis that had limits on how many data points it would return back. Jooble, the api I use to search for jobs, only returned 20 jobs per API call. Because these calls were asynchronous, I did not know how to keep track of the data in sequential order. I wanted to have lots of data points so I chose to go with 1000 jobs. After I got this data, I needed to use the MapQuest API to get the longitude and latitude of each job location provided by Jooble. However, once again, these were asynchronous requests so I found it incredibly hard to join the two data sets and tried many many methods to no avail. Finally, I decided to work with separate dictionaries with the same keys to join the two datasets. Next, I needed to find a map of the U.S with displayed longitude and latitude. I needed to scale my canvas to the exact size as well as know the range of longitude and latitude that my map covers by making a few edits to the map. Finally, I could map the longitude and latitude values to the height and width of my canvas and draw an ellipse with the height and width of the number of jobs located at that location. I had originally planned to allow for user input but that adds another layer of complexity to try and work around the asynchronous problem I keep running into.</p>
+    <img src='/img/apiFinal.png'>
   </body>
 </html>
