@@ -400,10 +400,6 @@ function death() {
 }
 
 function spawn(name,helpers) {
-  if (singleBullet) {
-    singleBullet.remove()
-    fired = false
-  }
   if (name == 'asteroid') {
     for (var i = 0; i < Math.ceil(level/2)+1; ++i) {
       asteroid = createSprite(random(100,width-100),random(100,height/2))
@@ -432,21 +428,6 @@ function spawn(name,helpers) {
       boss.debug = helpers
       bosses.add(boss)
     }
-  }
-}
-
-function mousePressed() {
-  if (!fired && !gameOver) {
-    singleBullet = createSprite(spaceship.position.x, spaceship.position.y)
-    singleBullet.addImage(singleBulletImg)
-
-    singleBullet.setCollider('circle', 0, 0, 5)
-    singleBullet.rotateToDirection = true
-
-    singleBullet.setSpeed(5, spaceship.rotation)
-
-    fired = true
-    deadly = true
   }
 }
 
@@ -524,6 +505,21 @@ function keyPressed() {
   }
   if (key == 's' || keyCode == DOWN_ARROW || key == 'x') {
     backward = true;
+  }
+
+  if (keyCode == 32) {
+    if (!fired && !gameOver) {
+      singleBullet = createSprite(spaceship.position.x, spaceship.position.y)
+      singleBullet.addImage(singleBulletImg)
+
+      singleBullet.setCollider('circle', 0, 0, 5)
+      singleBullet.rotateToDirection = true
+
+      singleBullet.setSpeed(5, spaceship.rotation)
+
+      fired = true
+      deadly = true
+    }
   }
 }
 
