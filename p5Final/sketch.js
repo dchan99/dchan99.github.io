@@ -400,6 +400,10 @@ function death() {
 }
 
 function spawn(name,helpers) {
+  if (singleBullet) {
+    singleBullet.remove()
+    fired = false
+  }
   if (name == 'asteroid') {
     for (var i = 0; i < Math.ceil(level/2)+1; ++i) {
       asteroid = createSprite(random(100,width-100),random(100,height/2))
@@ -515,19 +519,19 @@ function generatePattern(name,x,y) {
 var forward = false
 var backward = false
 function keyPressed() {
-  if (key == 'w' || keyCode == UP_ARROW) {
+  if (key == 'w' || keyCode == UP_ARROW || key == 'z') {
     forward = true;
   }
-  if (key == 's' || keyCode == DOWN_ARROW) {
+  if (key == 's' || keyCode == DOWN_ARROW || key == 'x') {
     backward = true;
   }
 }
 
 function keyReleased() {
-  if (key == 'w' || keyCode == UP_ARROW) {
+  if (key == 'w' || keyCode == UP_ARROW || key == 'z') {
     forward = false;
   }
-  if (key == 's' || keyCode == DOWN_ARROW) {
+  if (key == 's' || keyCode == DOWN_ARROW || key == 'x') {
     backward = false;
   }
 }
