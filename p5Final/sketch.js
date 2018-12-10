@@ -33,26 +33,26 @@ var enemiesDefeated = 0
 
 function preload() {
   sequenceBackground = loadAnimation(
-    'p5Final/assets/animatedSpace/space (1).png','p5Final/assets/animatedSpace/space (5).png','p5Final/assets/animatedSpace/space (9).png',
-    'p5Final/assets/animatedSpace/space (13).png','p5Final/assets/animatedSpace/space (17).png','p5Final/assets/animatedSpace/space (21).png',
-    'p5Final/assets/animatedSpace/space (25).png','p5Final/assets/animatedSpace/space (29).png','p5Final/assets/animatedSpace/space (33).png',
-    'p5Final/assets/animatedSpace/space (37).png','p5Final/assets/animatedSpace/space (41).png',
+    'assets/animatedSpace/space (1).png','assets/animatedSpace/space (5).png','assets/animatedSpace/space (9).png',
+    'assets/animatedSpace/space (13).png','assets/animatedSpace/space (17).png','assets/animatedSpace/space (21).png',
+    'assets/animatedSpace/space (25).png','assets/animatedSpace/space (29).png','assets/animatedSpace/space (33).png',
+    'assets/animatedSpace/space (37).png','assets/animatedSpace/space (41).png',
   )
 
-  sequenceSpaceship = loadAnimation('p5Final/assets/animatedSpaceship/spaceship.png','p5Final/assets/animatedSpaceship/spaceship (1).png','p5Final/assets/animatedSpaceship/spaceship (2).png',
-    'p5Final/assets/animatedSpaceship/spaceship (3).png','p5Final/assets/animatedSpaceship/spaceship (4).png','p5Final/assets/animatedSpaceship/spaceship (5).png')
+  sequenceSpaceship = loadAnimation('assets/animatedSpaceship/spaceship.png','assets/animatedSpaceship/spaceship (1).png','assets/animatedSpaceship/spaceship (2).png',
+    'assets/animatedSpaceship/spaceship (3).png','assets/animatedSpaceship/spaceship (4).png','assets/animatedSpaceship/spaceship (5).png')
 
-  bulletImg = loadImage('/p5Final/assets/bullet/pixel_laser_small_red.png')
-  singleBulletImg = loadImage('/p5Final/assets/bullet/pixel_laser_small_blue.png')
+  bulletImg = loadImage('assets/bullet/pixel_laser_small_red.png')
+  singleBulletImg = loadImage('assets/bullet/pixel_laser_small_blue.png')
 
-  asteroidImg = loadImage('/p5Final/assets/enemy/asteroid_grey.png')
-  minionImg = loadImage('/p5Final/assets/enemy/pixel_ship_red_small_2.png')
-  bossImg = loadImage('/p5Final/assets/enemy/pixel_station_red.png')
+  asteroidImg = loadImage('assets/enemy/asteroid_grey.png')
+  minionImg = loadImage('assets/enemy/pixel_ship_red_small_2.png')
+  bossImg = loadImage('assets/enemy/pixel_station_red.png')
 
-  ricochet = loadSound("p5Final/assets/ricochet.wav")
-  explosion = loadSound("p5Final/assets/explosion.wav")
-  asteroidCollide = loadSound("p5Final/assets/asteroidCollide.wav")
-  enemyDeath = loadSound("p5Final/assets/enemyDeath.wav")
+  ricochet = loadSound("assets/ricochet.wav")
+  explosion = loadSound("assets/explosion.wav")
+  asteroidCollide = loadSound("assets/asteroidCollide.wav")
+  enemyDeath = loadSound("assets/enemyDeath.wav")
 }
 
 function setup() {
@@ -60,14 +60,14 @@ function setup() {
 
   // var backgroundSprite = createSprite(0,0,width,height)
   // backgroundSprite.addAnimation('background',sequenceBackground)
-  // backgroundSprite.addAnimation('p5Final/assets/animatedSpace/space (1).png','p5Final/assets/animatedSpace/space (5).png','p5Final/assets/animatedSpace/space (9).png',
-  //   'p5Final/assets/animatedSpace/space (13).png','p5Final/assets/animatedSpace/space (17).png','p5Final/assets/animatedSpace/space (21).png',
-  //   'p5Final/assets/animatedSpace/space (25).png','p5Final/assets/animatedSpace/space (29).png','p5Final/assets/animatedSpace/space (33).png',
-  //   'p5Final/assets/animatedSpace/space (37).png','p5Final/assets/animatedSpace/space (41).png')
+  // backgroundSprite.addAnimation('assets/animatedSpace/space (1).png','assets/animatedSpace/space (5).png','assets/animatedSpace/space (9).png',
+  //   'assets/animatedSpace/space (13).png','assets/animatedSpace/space (17).png','assets/animatedSpace/space (21).png',
+  //   'assets/animatedSpace/space (25).png','assets/animatedSpace/space (29).png','assets/animatedSpace/space (33).png',
+  //   'assets/animatedSpace/space (37).png','assets/animatedSpace/space (41).png')
 
   spaceship = createSprite(width/2,height-100)
-  // spaceship.addAnimation('p5Final/assets/animatedSpaceship/spaceship.png','p5Final/assets/animatedSpaceship/spaceship (1).png','p5Final/assets/animatedSpaceship/spaceship (2).png',
-  //   'p5Final/assets/animatedSpaceship/spaceship (3).png','p5Final/assets/animatedSpaceship/spaceship (4).png','p5Final/assets/animatedSpaceship/spaceship (5).png')
+  // spaceship.addAnimation('assets/animatedSpaceship/spaceship.png','assets/animatedSpaceship/spaceship (1).png','assets/animatedSpaceship/spaceship (2).png',
+  //   'assets/animatedSpaceship/spaceship (3).png','assets/animatedSpaceship/spaceship (4).png','assets/animatedSpaceship/spaceship (5).png')
   spaceship.addAnimation('spaceshipAnimation',sequenceSpaceship)
   spaceship.setCollider('circle', 0, 0, 8);
   spaceship.immovable = true
@@ -394,7 +394,7 @@ function death() {
   spaceship.velocity.x = 0
   spaceship.velocity.y = 0
 
-  explode.addAnimation('p5Final/assets/animatedSpaceship/explode (1).png','p5Final/assets/animatedSpaceship/explode (2).png','p5Final/assets/animatedSpaceship/explode (3).png')
+  explode.addAnimation('assets/animatedSpaceship/explode (1).png','assets/animatedSpaceship/explode (2).png','assets/animatedSpaceship/explode (3).png')
 
   gameOver = true
 }
