@@ -1,0 +1,10 @@
+.startButton {
+  color: rgba(255,255,255,0.8);
+  background-color: rgba(0,255,0,0.8);
+  border: none;
+  text-decoration: none;
+  text-align: center;
+  padding: 10px;
+  font-size: 32px;
+  font-weight: 700;
+}
