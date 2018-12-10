@@ -1,0 +1,38 @@
+---
+layout: default
+---
+<!DOCTYPE html>
+<html>
+  <header>
+    <h1>David Chan | Final Project</h1>
+  </header>
+  <body>  
+    <h1> Description </h1>
+    <img src='/img/finalProjectSketch.png'>
+    <p> My final project will be a unique game. The game consists of the player dodging bullets that bounce around the map. The bullet is shot out by the enemy and travels at a certain speed. As the game progresses, there will be more enemies, shorter intervals between bullet fires, as well as increased bullet speed. The player will only hold one bullet that needs to be retrieved after it is fired. Whenever a bullet collides with another bullet, it will deflect each other. Whenever a bullet hits a wall, it will bounce and make the wall momentarily ripple. These actions will be paired with different sound effects like an actual bullet colliding with a piece of steel. As of now, I plan on working in p5.js because it’s fresher on my mind and I would be more comfortable with it. Perhaps I may switch to Processing if it ends up being more efficient. </p>
+
+    <h1> Inspiration: Sinuous</h1>
+    <img src='/img/sinuous.png'>
+    <p> In Sinuous, the player is a dot with a tail. The goal is to avoid the red moving dots for as long as possible. Along the way, there can be powerups that do different things. As the level increases, the speed of the moving red dots also increases.</p>
+
+    <h1> Inspiration: Modern Space Invaders </h1>
+    <img src='/img/bulletHell.png'>
+    <p> These types of games usually consist of a swarm of enemies that fires a lot of bullets in all directions. The player only needs to focus on dodging the bullets because the player’s bullets are automatically firing.</p>
+
+    <h1> Process </h1>
+    <p> The hardest part of this project was learning to make use of p5play.js The concept of sprites and sprite groups was not discussed in detail during class. Addtionally, p5play had it's own functions and documentation that differed from plain p5. However, p5play offered many solutions to problems that I was having. One main issue was object collision. p5play allowed me to check for object collision between different sprites and sprite groups which saved me a lot of time performing the check manually. The addition of animations was also new to me. I had to manually create multiple frames using the assets I had borrowed. However, when I had too many frames, the canvas would lag terribly. The maximum number of frames seems to be around 15 because I had to account for the multiple objects I would be creating during the gameplay.</p>
+    <p> One main conceptual change I decided to reduce the number of enemy bullets significantly. I realized how hard it was to play the game when too many bullets are bouncing around the map while the user is trying to pick up a bullet to use to shoot at the enemy. </p>
+    <p> I had intended this project to be not as coding and technical heavy but it ended up being that way. I had to manage 4 different kinds of object groups. Each object group was also capable of generating multiple objects. I had to make sure I mapped out how each object would interact with one another. For example, the enemies (asteroid, small spaceship, large space station) could all kill the user. The bullets of small spaceships could bounce off one another. The bullets of the large space stations, however, will not bounce off each other, nor off the other bullets because I instructed them to create a specifc pattern. If it were to bounce around, it would defeat the purpose of the patterns.</p>
+    <p> Example pattern where bullets spread in all directions around the boss <img src = '/img/p5FinalBossPattern.png'> </p>
+  
+    <h1> Screenshots </h1>
+    <p> Start Screen <img src = '/img/p5FinalStart.png'></p>
+    <p> Death <img src = '/img/p5FinalDeath.png'></p>
+    <video controls>
+      <source src="/img/Dodge Dodge Shoot - Gameplay.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <h1> <a href='https://github.com/dchan99/Creative-Coding/tree/master/p5Final'> Final Code! </a> </h1>
+  </body>
+</html>
