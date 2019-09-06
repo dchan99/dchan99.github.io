@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>David Chan - Developer</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="David Chan - Developer" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://localhost:4000/game_concept.html" />
+<meta property="og:url" content="http://localhost:4000/game_concept.html" />
+<meta property="og:site_name" content="David Chan - Developer" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/game_concept.html","headline":"David Chan - Developer","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=fd65bf5cf0b866883613f81805d127c983588852">
+    <script src="https://code.jquery.com/jquery-3.3.0.min.js" integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
+    <script src="/assets/js/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="http://github.com/dchan99/dchan99.github.io" class="button fork"><strong>View On GitHub</strong></a>
+        
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <!DOCTYPE html>
+<html>
+  <header>
+    <h1>David Chan | Game Concept</h1>
+  </header>
+  <body>
+    <h1>Game Inspirations</h1>
+    <p>My game concept stems from multiple inspirations. </p>
+    <ul>
+        <li>
+            Top down RPGs like Pokemon
+            <img src='http://www.fraghero.com/wp-content/uploads/2016/08/maxresdefault-2-1.jpg'/>
+        </li>
+        <li>
+            Field of view in FPS games
+            <img src='https://i.ytimg.com/vi/22Mk8NwuspI/maxresdefault.jpg'/>
+        </li>
+        <li>
+            Freedom of choice to determine the gameplay. Good vs Evil like the karma system in Infamous
+            <img src='https://pre00.deviantart.net/5cfc/th/pre/f/2014/086/a/f/karma_2_by_linkmaster101-d7bvglm.png'/>
+        </li>
+    </ul>
+
+    <h1> Playthrough </h1>
+    <p> This game will be a top down view with field of view implemented. You move your character around with the keyboard and activate your weapon with your mouse. When you come into an enemies field of view, they become "alert" and actively target you. The goal is to navigate the maze like level and reach the end. Players are scored based on how many deaths, how many enemies dead, how many enemies avoided, etc. Players can choose to play steathily or obliterate everything on sight.</p>
+
+    <h1> Health </h1>
+    <p> Player and enemies are one-hit-kill except for bosses. Enemies can kill you through their weapons or through touch. </p>
+
+    <h1> Map </h1>
+    <p> The map will most likely be predrawn instead of generated automatically. Unless I can work out a logic for generating the map as well as placement of enemies or loot, each level will be manually drawn and plotted </p>
+
+    <h1> Weapons </h1>
+    <ul>
+        <li>
+            Special Pistol
+            <ul>
+                <li>
+                    Only one bullet
+                </li>
+                <li>
+                    After firing, player can control the movement of the bullet with arrow keys or WASD
+                </li>
+                <li>
+                    Gun becomes useless unless player retrieves the bullet
+                </li>
+            </ul>
+        </li>
+        <li>
+            Railgun
+            <ul>
+                <li>
+                    Long reload time
+                </li>
+                <li>
+                    <b> LOUD </b> which means enemies can hear it and gather
+                </li>
+                <li>
+                    Shoots through two walls and multiple enemies
+                </li>
+            </ul>
+        </li>
+        <li>
+            TBD Portal Gun???
+            <ul>
+                <li>
+                </li>
+                <li>
+                </li>
+                <li>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <h1> Afterthought </h1>
+    <p> This is definitely a lot of elements to incorporate and I'm positve I will not be able to do everything I have imagined. To start, I need to learn animation or transitions of objects on the screen. Then I need to design a level with enough complexity to incorporate the different elements. I forsee this being pretty technical and "mathy" when it comes to calculating the field of view on every frame and adjusting the drawn world to grey/black out everything not within the field of view. Afterwards will come interactions with other objects such as enemies and walls. Next comes the use of weapons which will follow a similar logic as to how enemies/walls interacts with the player. Finally, I need to think of giving the enemies autonamy to a certain extent that allows them to move around out of the field of view and each have their own field of view. This is definitely an extremely ambitious projects to accomplish in a 2(???) Weeks.
+
+    <h1> Mockup </h1>
+    <img src='/img/GameMockUp.jpg'>
+
+    <h1> 2018-09-17 Update </h1>
+    <p> Implemented character movement and attempt at creating a field of view. The character movement was originally considered simple by just simply detecting if a key is pressed and them increment the object position in the correct direction. However, this does not allow for diagonal movement and the movements themselves did not feel right. I switched to using a boolean value that is set to true on keypress and then set to false on keyrelease. The draw function will check for these boolean values and can increment in both X and Y so simulate diagonal movement. </p>
+    <img src='/img/movementControl.png'>
+
+    <p> Drawing the field of view is proving to be extremely difficult. It's simple to create a line that follows from the mouse to the character but I need a line with a specified distance. In order to do so, I need to calculate the angle between the character and the mouse location. The coordinate plane is different so it's hard to make sense of what the angles means. </p>
+    <img src='/img/angleCalculations.png'>
+
+    <p> I used a few different types of angle calculations which all seem to give me different outputs. After I am able to create a line of defined length and follows the direction of the mouse, it should be possible to expand it and make it look like a "field of view" or an arc. For now, it feels like a math problem but the coordinates are in the wrong spots.</p>
+    <img src='/img/fovLines.png'>
+
+    <h1> 2018-09-24 Final Update </h1>
+    <p> I did not know where this project was going to go because the scope of the originally game was just too much to accomplish in a short about of time. I knew I wanted to keep the core elements of having a field of view and maze like structure. So to make these elements more complex, I decided that I would not be hardcoding a maze but instead, implement an algorithm to create a maze. I chose to use the Recursive Backtracker algorithm I found on <a href="https://en.wikipedia.org/wiki/Maze_generation_algorithm">Wikipedia</a></p>
+    
+    <p> For the algorithm, I had to create a class for each space on the maze. Each tile will start off with 4 walls and have a couple more attributes that helps the algorithm determine if the tile should be modified or not </p>
+    <img src='/img/tileClass.png'>
+
+    <p> Then, I needed to implement the logic for removing the walls on each tile. If this tile has a right wall removed, the tile to the right should have the left wall removed. Here's a snippet of the logic: </p>
+    <img src='/img/removeWallLogic.png'>
+
+    <p> Implementing this algorithm was time consuming because I am unfamiliar with Java's data structures like an Array or an ArrayList. However, slowly working through the steps of the algorithm described allowed me to have a working maze generator </p>
+
+    <p> The next step was to implement the field of view so that only a certain area in front of the character could be seen. I went through many different ways of trying to do this, the main ones being masking and PImage. PImage showed promise because it would allow me to draw the field of view on a different layer above the maze. However, I was unable to find a way to fill around the drawn field of view. I finally stumbled upon creating custom shapes and a specific case where I could create a hole in the shape. This was done using shapes and contours. </p>
+    <img src='/img/showPartial.png'>
+
+    <p> This is a much more simplified description of all the logic, time, and planning that went into creating this game. I was not expecting it to be quite this troublesome but I did learn a lot in the end. Here's a screenshot of the game: </p>
+    <img src='/img/gameScreenshot.png'>
+
+    <h1> <a href='https://github.com/dchan99/Creative-Coding/tree/master/finalGame'> Click here for the Processing Code! </a> </h1>
+  </body>
+</html>
+
+
+      </section>
+      <footer>
+        
+          <p>Project maintained by <a href="http://github.com/dchan99">dchan99</a></p>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>
